@@ -1,0 +1,61 @@
+body { color: #123; background-color: #fdfeff; font-family: sans-serif; font-size: 1em; line-height: 2em; }
+nav.navbar.bg-dark { background-color: rgba(126, 189, 255, 1.0)!important; padding: 0; }
+nav.navbar.bg-dark a.nav-link { color: rgba(255, 255, 255, 1.0)!important; }
+nav.navbar.bg-dark a.nav-link:hover { color: rgba(200, 10, 10, 1.0)!important; }
+a { color: #069; text-decoration: none; }
+a:hover { color: #c00; }
+p a:hover { color: inherit; text-decoration: none; }
+a > img { border: 0px; }
+img#page-logo { margin-right: 1em; }
+span#page-brand { vertical-align: middle; margin-left: 0.25em; font-size: 2.0em; font-weight: bold; color: #f90; text-shadow: 4px 4px 10px #333; }
+section#main-content { margin: 100px 0 50px 0; }
+h1.page-title { color: #090; }
+h4.page-date { color: #999; font-size: 0.8em; }
+div.page-content { color: #666; font-size: 1.1em; text-align: justify; margin-bottom: 2em; }
+div.page-content section.article-image { margin-bottom: 1.5em; }
+div.page-content section.article-image img { width: 100%; height: 400px; padding: 1px; border: 1px solid #ccc; }
+div.page-content section.article-intro { font-weight: bold; margin: 1em 0; }
+div.page-content section.article-content { font-weight: normal; }
+div.page-content div.article-item { margin: 2em 0; }
+div.page-content img.not-found { width: 50%; }
+div.article-item { display: inline-flex; color: #666; margin-bottom: 1em; }
+div.article-item span.article-image img { width: 300px; height: 200px; padding: 1px; border: 1px solid #ccc; }
+div.article-item span.article-description { margin-left: 4em; }
+div.article-item span.article-description h3.page-title { font-size: 1.5em; }
+div.article-item span.article-description div.page-intro { text-align: justify; line-height: 1.5em; margin-bottom: 2em; }
+hr.page-separator { color: #ccc; margin: 1em 0 2em 0; }
+footer.bg-dark { background-color: rgba(126, 189, 255, 1.0)!important; color: rgba(255, 255, 255, 1.0)!important; }
+footer.bg-dark p { margin: 0.5em; font-size: 0.83em; }
+footer.bg-dark p a { color: rgba(255, 255, 255, 1.0)!important; }
+form.form { padding: 1.35em; color: #666; background-color: #eee; border: 1px solid #ccc; border-radius: 0.35em; }
+form.form div.form-title { border-bottom: 1px solid #ccc; margin-bottom: 0.5em; font-size: 1.5em; color: #c00; }
+form.form div.field-label { padding-top: 0.5em; margin-bottom: -0.25em; font-size: 1em; }
+form.form div.field-label.one-line { display: flex; }
+form.form div.field-label span.field-head { display: block; min-width: 70px; }
+form.form div.field-label span.field-data { display: block; font-weight: bold; }
+form.form textarea.form-control { min-height: 5em; }
+form.form hr { margin: 1.5em 0; }
+form.form div.label { text-align: right; font-size: 0.85em; }
+form.form div.form-buttons { text-align: right; }
+form.form div.form-buttons button.btn { width: 145px; }
+form.form.danger { background-color: #fcc; }
+form.form.danger p.dialog-text { font-size: 1.3em; color: #f00; margin-top: 2em; }
+form.list-filter { display: flex; }
+form.list-filter button.btn { margin-right: 0.4em; }
+div.list-header { display: inline-flex; width: 100%; }
+div.list-header span.list-title { color: #900; font-size: 1.75em; font-weight: bold; }
+div.list-header span.list-search { display: flex; margin: 0 1em; }
+div.list-header span.list-search input[type="search"].form-control { width: 200px; margin: 0 0.5em; }
+div.list-header span.list-buttons { margin-left: auto; }
+table.table th { font-size: 1em; padding: 1em 0.5em; color: #369; background-color: #def; border-color: #ccc; }
+table.table td { font-size: 0.8em; padding: 0.5em; line-height: 1.35em; vertical-align: middle; color: #666; }
+table.table td.no-results { text-align: center; padding: 1.25em; font-size: 1em; color: #c00; background-color: #fdd; }
+table.table tr.row-green td { color: #393; font-weight: bold; }
+table.table tr.row-grey td { color: #666; font-weight: normal; }
+table.table tr.row-red td { color: #c00; font-weight: normal; }
+button.btn-sm { font-size: 0.75rem; }
+p.message { padding: 0.5em; text-align: center; border-radius: 5px; }
+div.panel-field { text-align: justify; color: #666; margin-left: 5em; }
+div.panel-field span.panel-data { font-weight: bold; color: #c00; position: absolute; left: 280px; }
+div.panel-heading { font-size: 1.25em; font-weight: bold; color: #060; margin-bottom: 1em; text-align: right; }
+div.panel-value { font-size: 3.25em; font-weight: bold; color: #c00; text-align: right; }
