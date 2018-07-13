@@ -78,7 +78,7 @@
 	}
 	div#manual-title {
 		font-size: 1.5em;
-		margin-bottom: 1.0em;
+		margin-bottom: 0.5em;
 		text-align: left;
 	}
 	div#manual-picture {

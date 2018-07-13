@@ -2,6 +2,7 @@
 
 * Application deployed on <a href="https://www.heroku.com/" target="_blank">Heroku</a> platform. 
 * Database stored in <a href="https://www.elephantsql.com/" target="_blank">ElephantSQL</a> platform. 
+* Embedded deploy manual.
 * Simple Blog engine as main business logic.
 * Contact form.
 * Admin Panel and managing of Users, Posts, Contact Messages.
