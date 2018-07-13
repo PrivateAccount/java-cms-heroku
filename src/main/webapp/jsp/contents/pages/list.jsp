@@ -38,6 +38,9 @@
 						<c:when test="${fn:toLowerCase(site.getIndex()) == 'contact'}">
 							<c:set var="item_icon" value="<img src='img/contact.png' title='Strona kontaktowa' />" />
 						</c:when>
+						<c:when test="${fn:substringBefore(site.getIndex(), '-') == 'manual'}">
+							<c:set var="item_icon" value="<img src='img/manual.png' title='Manual' />" />
+						</c:when>
 						<c:otherwise>
 							<c:set var="item_icon" value="<img src='img/article.png' title='Artykuł' />" />
 						</c:otherwise>

@@ -60,7 +60,7 @@ public class Pages_Model {
 
 		try {
 			String condition = filter != null ? " WHERE index LIKE '%" + filter + "%' OR title LIKE '%" + filter + "%' OR intro LIKE '%" + filter + "%' OR content LIKE '%" + filter + "%'" : "";
-			String query = "SELECT * FROM " + TABLE + condition + " ORDER BY id";
+			String query = "SELECT * FROM " + TABLE + condition + " ORDER BY index";
 			conn = db.Database_Connection.open();
 			st = conn.prepareStatement(query);
 			rs = st.executeQuery();
