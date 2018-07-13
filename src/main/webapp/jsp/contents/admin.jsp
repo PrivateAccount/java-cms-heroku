@@ -22,11 +22,11 @@
 	</div>
 	<div class="py-4 row">
 		<div class="col-lg-4 offset-lg-4">
-			<p><a href="/pages"><button class="btn btn-primary btn-block">Strony</button></a></p>
-			<p><a href="/users"><button class="btn btn-primary btn-block">Użytkownicy</button></a></p>
-			<p><a href="/visitors"><button class="btn btn-primary btn-block">Odwiedziny</button></a></p>
-			<p><a href="/messages"><button class="btn btn-primary btn-block">Wiadomości</button></a></p>
-			<p><a href="/logout"><button class="btn btn-danger btn-block">Wyloguj</button></a></p>
+			<div class="item-button"><a href="/pages"><button class="btn btn-primary btn-block">Strony</button></a></div>
+			<div class="item-button"><a href="/users"><button class="btn btn-primary btn-block">Użytkownicy</button></a></div>
+			<div class="item-button"><a href="/visitors"><button class="btn btn-primary btn-block">Odwiedziny</button></a></div>
+			<div class="item-button"><a href="/messages"><button class="btn btn-primary btn-block">Wiadomości</button></a></div>
+			<div class="item-button"><a href="/logout"><button class="btn btn-danger btn-block">Wyloguj</button></a></div>
 		</div>
 	</div>
 </div>

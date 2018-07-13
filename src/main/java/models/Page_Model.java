@@ -122,4 +122,41 @@ public class Page_Model {
 		
 		return articles;
 	}
+	
+	public ArrayList<Page_Dao> getManuals() throws SQLException {
+
+		Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		ArrayList<Page_Dao> manuals = new ArrayList<Page_Dao>();
+
+		try {
+			String query = "SELECT * FROM " + TABLE + " WHERE index LIKE 'manual-%' ORDER BY id";
+			conn = db.Database_Connection.open();
+			st = conn.prepareStatement(query);
+			rs = st.executeQuery();
+			while (rs.next()) {
+				Page_Dao manual = new Page_Dao();
+				manual.setId(rs.getInt("id"));
+				manual.setIndex(rs.getString("index"));
+				manual.setTitle(rs.getString("title"));
+				manual.setImage(rs.getString("image"));
+				manual.setIntro(rs.getString("intro"));
+				manual.setContent(rs.getString("content"));
+				manual.setModified(rs.getTimestamp("modified"));
+				manuals.add(manual);
+			}
+		} 
+		catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} 
+		finally {
+			rs.close();
+			st.close();
+			conn.close();
+		}
+		
+		return manuals;
+	}
 }

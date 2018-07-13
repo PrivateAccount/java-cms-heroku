@@ -8,37 +8,38 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 import dao.Page_Dao;
 import dao.Message_Dao;
 import dao.User_Dao;
 import models.Page_Model;
-import models.Message_Model;
 import util.Message;
 
-@WebServlet("/contact")
+@WebServlet("/manual")
 
-public class Contact_Servlet extends HttpServlet {
-	
-	private static final String MODULE = "contact";
+public class Manual_Servlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Page_Dao page = null;
+		ArrayList<Page_Dao> pages = null;
 		User_Dao user = (User_Dao) request.getSession().getAttribute("sessionUser");
 				
 		Page_Model modelObject = new Page_Model();
 		Message message = new Message(request);
 		
 		try {
-			page = modelObject.getPage("contact");
+			page = modelObject.getPage("manual");
+			pages = modelObject.getManuals();
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();
 		} 
 		
-		request.setAttribute("module", MODULE);
+		request.setAttribute("module", "manual");
 		request.setAttribute("page", page);
+		request.setAttribute("data", pages);
 		request.setAttribute("user", user);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/templates/public.jsp");
@@ -50,33 +51,6 @@ public class Contact_Servlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Message message = new Message(request);
-		String visitorIp = request.getRemoteAddr();
-		String confirm = request.getParameter("confirm");
-		
-		if (confirm != null) {
-			int result = 0;
-			Message_Dao contact = new Message_Dao();
-			contact.setNick(request.getParameter("nick"));
-			contact.setEmail(request.getParameter("email"));
-			contact.setMessage(request.getParameter("message"));
-			contact.setIp(visitorIp);
-			contact.setRequest(true);
-			Message_Model modelObject = new Message_Model();
-			try {
-				result = modelObject.saveOne(contact);
-			} 
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-			if (result == 1) {
-				message.show("SUCCESS", "Wiadomość została pomyślnie wysłana.");
-				response.sendRedirect("/" + MODULE);
-			}
-			else {
-				message.show("ERROR", "Wiadomość nie została wysłana.");
-				response.sendRedirect("/" + MODULE);
-			}
-		}
+		doGet(request, response);
 	}
 }
