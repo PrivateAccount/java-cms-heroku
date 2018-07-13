@@ -17,8 +17,8 @@
 			<section class="article-content">
 				<c:out value="${page.getContent()}" escapeXml="false" />
 			</section>
-			<div class="py-4 text-center">
-				<button class="btn btn-success" onclick="startManual()">Start</button>
+			<div class="py-3 col-lg-4 offset-lg-4">
+				<button class="btn btn-success btn-block" onclick="startManual()">Start</button>
 			</div>
 		</div>
 		<div class="manual-content">
@@ -34,7 +34,7 @@
 				</div>
 				<div id="manual-buttons">
 					<button class="btn btn-success" id="manual-prev"> &lt; </button>
-					<span id="manual-page">1 z 25</span>
+					<span id="manual-page">1 z 18</span>
 					<button class="btn btn-success" id="manual-next"> &gt; </button>
 				</div>
 				<div id="manual-description">
@@ -49,7 +49,7 @@
 			<c:forEach items="${data}" var="manual" varStatus="iterator">
 				<div style="display: none;">
 					<span id="<c:out value="${manual.getIndex()}" />">
-						<span class="title"><c:out value="${manual.getTitle()}" /></span>
+						<span class="title"><c:out value="${manual.getTitle()}" escapeXml="false" /></span>
 						<span class="description"><c:out value="${manual.getContent()}" escapeXml="false" /></span>
 					</span>
 				</div>
@@ -80,12 +80,14 @@
 		font-size: 1.5em;
 		margin-bottom: 0.5em;
 		text-align: left;
+		width: 100%;
 	}
 	div#manual-picture {
 		min-height: 400px;
 	}
 	img#manual-image {
-		max-height: 400px;
+		width: 100%;
+		height: 400px;
 		padding: 1px;
 		border: 1px solid #ccc;
 	}
@@ -113,8 +115,10 @@
 	}
 	div#manual-description {
 		font-size: 1.0em;
+		line-height: 1.25em;
 		margin: 1.0em 0;
 		text-align: justify;
+		width: 100%;
 	}
 	div#image-zoom {
 		display: none;

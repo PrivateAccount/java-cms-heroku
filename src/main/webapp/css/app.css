@@ -60,3 +60,4 @@ div.panel-field { text-align: justify; color: #666; margin-left: 5em; }
 div.panel-field span.panel-data { font-weight: bold; color: #c00; position: absolute; left: 280px; }
 div.panel-heading { font-size: 1.25em; font-weight: bold; color: #060; margin-bottom: 1em; text-align: right; }
 div.panel-value { font-size: 3.25em; font-weight: bold; color: #c00; text-align: right; }
+pre { color: #fff; font-size: 1em; line-height: 1em; padding: 0 1em 1em 1em; margin: 1em 0; background-color: #369; border-radius: 5px; }
