@@ -13,33 +13,34 @@ import models.Visitor_Model;
 
 public class Visitor implements ServletRequestListener {
 	
-    public void requestInitialized(ServletRequestEvent servletRequestEvent)  { 
+	public void requestInitialized(ServletRequestEvent servletRequestEvent)  { 
 
-    	HttpServletRequest request = (HttpServletRequest) servletRequestEvent.getServletRequest();
+		HttpServletRequest request = (HttpServletRequest) servletRequestEvent.getServletRequest();
     	
-    	String visitorIp = request.getRemoteAddr();
-    	String requestUri = request.getRequestURI();
-    	String httpReferer = request.getHeader("Referer");
+		String visitorIp = request.getRemoteAddr();
+		String requestUri = request.getRequestURI();
+		String hostname = request.getServerName();
+		String httpReferer = request.getHeader("Referer");
 
 		Visitor_Dao visitor = new Visitor_Dao();
-		
+
 		visitor.setHttpReferer(httpReferer);
 		visitor.setVisitorIp(visitorIp);
 		visitor.setRequestUri(requestUri);
-		
+
 		Visitor_Model modelObject = new Visitor_Model();
 		
 		try {
-			if (requestUri.indexOf(".") == -1) {
+			if (httpReferer != null && !httpReferer.contains(hostname) && !requestUri.contains(".")) {
 				int result = modelObject.save(visitor);
 			}
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-    }
+	}
 	
-    public void requestDestroyed(ServletRequestEvent servletRequestEvent)  { 
+	public void requestDestroyed(ServletRequestEvent servletRequestEvent)  { 
 
-    }
+	}
 }
