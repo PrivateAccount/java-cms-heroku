@@ -7,4 +7,6 @@
 * Contact form.
 * Admin Panel and managing of Users, Posts, Contact Messages.
 * Page visits reports.
-* On-Line: https://java-cms.herokuapp.com/
+* On-Line: 
+** Mirror 1: https://java-blog-cms.herokuapp.com/
+** Mirror 2: https://java-cms.herokuapp.com/
